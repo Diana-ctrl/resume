@@ -1,12 +1,12 @@
 import classes from './MyPosts.module.css';
 import Post from './OnePost/Post';
-import { ProfilePageType } from '../../../redux/store';
-import React, {KeyboardEvent} from 'react';
-import {AllActionsType, addPostActionCreator, onPostChangeActionCreator} from '../../../redux/store'
+import { ProfilePageType } from '../../../redux/profileReduser';
+import React, { KeyboardEvent } from 'react';
 
 type MyPostsPropsType = {
   profilePage: ProfilePageType
-  dispatch: (action: AllActionsType) => void
+  postChange: (text: string) => void
+  addPost: () => void
 }
 
 const MyPosts: React.FC<MyPostsPropsType> = (props) => {
@@ -15,27 +15,27 @@ const MyPosts: React.FC<MyPostsPropsType> = (props) => {
 
   let newPostElement = React.createRef<HTMLTextAreaElement>();
 
-  function addPost() {
-      props.dispatch(addPostActionCreator());
+  function onAddPost() {
+    props.addPost();
   }
   function onPostChange() {
     if (newPostElement.current) {
-    let text = newPostElement.current.value;
-    props.dispatch(onPostChangeActionCreator(text)); 
+      let text = newPostElement.current.value;
+      props.postChange(text);
     }
   }
-  function pressEnter(e: KeyboardEvent<HTMLTextAreaElement>) {
+  function onPressEnter(e: KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === 'Enter') {
-      props.dispatch(addPostActionCreator());
+      props.addPost();
     }
-}
+  }
 
   return (
     <div className={classes.item}>
       <h3>My posts</h3>
-      <textarea ref={newPostElement} onChange={onPostChange} value={props.profilePage.newPostText} onKeyPress={pressEnter}/>
+      <textarea ref={newPostElement} onChange={onPostChange} value={props.profilePage.newPostText} onKeyPress={onPressEnter} />
       <div>
-        <button onClick={addPost}>Add motivation</button>
+        <button onClick={onAddPost}>Add motivation</button>
       </div>
       <div>
         <button>Remove</button>

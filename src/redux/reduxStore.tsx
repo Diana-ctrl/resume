@@ -10,4 +10,7 @@ let redusers = combineReducers({
 let store = createStore(redusers);
 
 export default store;
- 
+
+export type StoreType = typeof store;
+export type AppStateType = ReturnType<typeof store.getState>;
+

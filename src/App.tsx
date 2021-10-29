@@ -4,16 +4,14 @@ import Header from './components/Header/Header'
 import Navbar from './components/Navbar/Navbar';
 import MainContent from './components/MainContent/MainContent';
 import TodoList from './components/TodoList/TodoList';
-import Dialogs from './components/Dialogs/Dialogs';
 import MoreInformation from './components/MoreInformation/MoreInformation';
 import Music from './components/Music/Music';
 import { Route } from 'react-router-dom';
-import { RootStateType } from './redux/store';
-import {AllActionsType} from './redux/store';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
+import {StoreType} from './redux/reduxStore';
 
 type AppPropsType = {
-  state: RootStateType
-  dispatch: (action: AllActionsType) => void
+  store: StoreType
 }
 
 function App(props: AppPropsType) {
@@ -22,9 +20,9 @@ function App(props: AppPropsType) {
       <Header />
       <Navbar />
       <div className='app-wrapper-content'>
-        <Route path={'/mainPage'} render={() => <MainContent profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
+        <Route path={'/mainPage'} render={() => <MainContent store= {props.store} />} />
         <Route path={'/moreInformaition'} render={() => <MoreInformation />} />
-        <Route exact path={'/message'} render={() => <Dialogs dialogs={props.state.dialogsPage} dispatch={props.dispatch}/>} />
+        <Route exact path={'/message'} render={() => <DialogsContainer store= {props.store}/>} />
         <Route path={'/music'} render={() => <Music />} />
       </div>
       <TodoList />

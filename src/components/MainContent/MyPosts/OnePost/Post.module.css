@@ -1,0 +1,11 @@
+.item {
+    color: #696969;
+    text-shadow: 5px 5px 10px #000000;
+    margin-top: 20px;
+}
+
+.item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+}

@@ -1,0 +1,9 @@
+.header {
+    grid-area: h;
+    background-color: #D8BFD8;
+  
+  }
+.item {
+    color: #696969;
+    text-shadow: 5px 5px 10px #000000;
+}

@@ -8,21 +8,17 @@ import MoreInformation from './components/MoreInformation/MoreInformation';
 import Music from './components/Music/Music';
 import { Route } from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import {StoreType} from './redux/reduxStore';
 
-type AppPropsType = {
-  store: StoreType
-}
 
-function App(props: AppPropsType) {
+function App() {
   return (
     <div className='app-wrapper'>
       <Header />
       <Navbar />
       <div className='app-wrapper-content'>
-        <Route path={'/mainPage'} render={() => <MainContent store= {props.store} />} />
+        <Route path={'/mainPage'} render={() => <MainContent />} />
         <Route path={'/moreInformaition'} render={() => <MoreInformation />} />
-        <Route exact path={'/message'} render={() => <DialogsContainer store= {props.store}/>} />
+        <Route exact path={'/message'} render={() => <DialogsContainer />} />
         <Route path={'/music'} render={() => <Music />} />
       </div>
       <TodoList />

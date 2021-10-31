@@ -6,7 +6,7 @@ export type PostsType = {
     likecount: number
 };
 
-export type ProfilePageType = {
+export type InitialProfilePageType = {
     postsData: Array<PostsType>
     newPostText: string
 };
@@ -20,15 +20,19 @@ let initialState = {
     newPostText: '',
 }
 
-const profileReduser = (state: ProfilePageType = initialState, action: AllActionsType): ProfilePageType => {
+const profileReduser = (state: InitialProfilePageType = initialState, action: AllActionsType): InitialProfilePageType => {
     switch (action.type) {
-        case ADD_POST:
-            state.postsData.push({ id: 1, message: state.newPostText, likecount: 0 });
-            state.newPostText = '';
-            return state;
-        case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+        case ADD_POST: {
+            let stateCopy = {...state}
+            stateCopy.postsData.push({ id: 1, message: state.newPostText, likecount: 0 });
+            stateCopy.newPostText = '';
+            return stateCopy;
+        }
+        case UPDATE_NEW_POST_TEXT: {
+            let stateCopy = {...state}
+            stateCopy.newPostText = action.newText;
+            return stateCopy;
+        }
         default:
             return state;
     }

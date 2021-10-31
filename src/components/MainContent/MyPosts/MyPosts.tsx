@@ -1,15 +1,10 @@
 import classes from './MyPosts.module.css';
 import Post from './OnePost/Post';
-import { ProfilePageType } from '../../../redux/profileReduser';
 import React, { KeyboardEvent } from 'react';
+import {MyPostType} from './MyPostConteiner';
 
-type MyPostsPropsType = {
-  profilePage: ProfilePageType
-  postChange: (text: string) => void
-  addPost: () => void
-}
 
-const MyPosts: React.FC<MyPostsPropsType> = (props) => {
+const MyPosts: React.FC<MyPostType> = (props) => {
 
   let postsElements = props.profilePage.postsData.map(p => <Post message={p.message} likecount={p.likecount} />);
 

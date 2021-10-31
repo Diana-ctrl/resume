@@ -2,15 +2,9 @@ import classes from './Dialogs.module.css';
 import DialogItem from './DialogsItem/DialogItem';
 import Messages from './MessagesItem/MessagesItem';
 import React, { KeyboardEvent } from 'react';
-import { DialogsPageType } from '../../redux/dialogsReduser';
+import { DialogsType } from './DialogsContainer';
 
-type DialogsPropsType = {
-    dialogsPage: DialogsPageType
-    addMessage: () => void
-    messageChange: (value: string) => void
-}
-
-const Dialogs: React.FC<DialogsPropsType> = (props) => {
+const Dialogs: React.FC<DialogsType> = (props) => {
 
     let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem id={d.id} name={d.name} photo={d.photo} />);
     let messagesElements = props.dialogsPage.messages.map(m => <Messages message={m.message} />);

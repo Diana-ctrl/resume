@@ -9,7 +9,7 @@ export type MessagesType = {
     id: number
     message: string
 }
-export type DialogsPageType = {
+export type InitialDialogsPageType = {
     dialogs: Array<DialogsItemType>
     messages: Array<MessagesType>
     newMessageText: string
@@ -29,15 +29,20 @@ let initialState = {
     newMessageText: '',
 }
 
-const dialogsReduser = (state: DialogsPageType = initialState, action: AllActionsType): DialogsPageType => {
+const dialogsReduser = (state: InitialDialogsPageType = initialState, action: AllActionsType): InitialDialogsPageType => {
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_TEXT:
-            state.newMessageText = action.newText;
-            return state;
-        case ADD_MESSAGE:
-            state.messages.push({ id: 3, message: state.newMessageText });
-            state.newMessageText = '';
-            return state;
+        case UPDATE_NEW_MESSAGE_TEXT: {
+            let stateCopy = {...state}
+            stateCopy.newMessageText = action.newText;
+            return stateCopy;
+        }
+        case ADD_MESSAGE: {
+            let stateCopy = {...state};
+            stateCopy.messages = [...state.messages];
+            stateCopy.messages.push({ id: 3, message: state.newMessageText });
+            stateCopy.newMessageText = '';
+            return stateCopy;
+        }
         default:
             return state;
     }

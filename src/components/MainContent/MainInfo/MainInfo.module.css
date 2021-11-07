@@ -1,9 +1,23 @@
 .item {
     color: #696969;
-    text-shadow: 5px 5px 10px #000000;
     padding: 20px;
 }
 .container > img {
-    width: 1000px;
+    width: 1110px;
+    padding: 14px;
+    position: relative;
+    text-align: center;
+    color: white;
+    opacity: 0.5; 
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%); 
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+
 }
 

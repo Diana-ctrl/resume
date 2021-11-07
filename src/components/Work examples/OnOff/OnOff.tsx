@@ -32,7 +32,7 @@ export default function OnOff() {
     };
     const mainStyle = {
         border: '1px solid gray',
-        height: '10%',
+        height: '70px',
         borderRadius: '25px',
         padding: '12px',
     };

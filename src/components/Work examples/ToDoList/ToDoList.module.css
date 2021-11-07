@@ -3,7 +3,7 @@ li {
 }
 .toDoList {
     border: 1px solid gray;
-    height: 400px;
+    height: 450px;
     border-radius: 25px;
     padding: 12px;
     overflow: scroll;

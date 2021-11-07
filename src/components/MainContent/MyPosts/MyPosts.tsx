@@ -13,6 +13,9 @@ const MyPosts: React.FC<MyPostType> = (props) => {
   function onAddPost() {
     props.addPost();
   }
+  function deletePost() {
+    props.deletePost();
+  }
   function onPostChange() {
     if (newPostElement.current) {
       let text = newPostElement.current.value;
@@ -33,7 +36,7 @@ const MyPosts: React.FC<MyPostType> = (props) => {
         <button onClick={onAddPost}>Add motivation</button>
       </div>
       <div>
-        <button>Remove</button>
+        <button onClick={deletePost}>Remove</button>
       </div>
       <div className={classes.post}>
         {postsElements}

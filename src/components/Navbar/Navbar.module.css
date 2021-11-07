@@ -2,10 +2,10 @@
     grid-area: n;
     background-color: #FFC0CB;
     padding: 10%;
+    cursor: 'pointer'
   }
   .item a {
     color: #696969;
-    text-shadow: 5px 5px 10px #000000;
     text-decoration: none;
   }
   .item a.activeLink {

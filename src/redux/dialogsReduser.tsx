@@ -43,6 +43,7 @@ const dialogsReduser = (state: InitialDialogsPageType = initialState, action: Al
             stateCopy.newMessageText = '';
             return stateCopy;
         }
+
         default:
             return state;
     }

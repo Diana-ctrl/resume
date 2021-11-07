@@ -5,6 +5,7 @@ export const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 export const ADD_MESSAGE = 'ADD-MESSAGE';
 export const ADD_POST = 'ADD-POST';
 export const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+export const DELETE_POSTS = 'DELETE-POSTS';
 
 export type PostsType = {
     id: number
@@ -32,6 +33,7 @@ export type RootStateType = {
     profilePage: ProfilePageType
     dialogsPage: DialogsPageType
 };
+
 // type AddPostType = {
 //     type: ADD_POST
 // };                       //создание типов вручную
@@ -61,6 +63,7 @@ type AddPostActionType = ReturnType<typeof addPostActionCreator>
 type OnPostChangeActionType = ReturnType<typeof onPostChangeActionCreator>
 type AddMessageActionType = ReturnType<typeof addMessageActionCreator>
 type OnMessageChangeActionType = ReturnType<typeof onMessageChangeActionCreator>
+type DeletePostActionCreatorType = ReturnType<typeof deletePostActionCreator>
 
 let store: StoreType = {
     _state: {
@@ -106,6 +109,7 @@ let store: StoreType = {
 };
 export let addPostActionCreator = (): AddPostActionType => ({ type: ADD_POST });
 export let onPostChangeActionCreator = (text: string): OnPostChangeActionType => ({ type: UPDATE_NEW_POST_TEXT, newText: text } as const)
-export let addMessageActionCreator = (): AddMessageActionType => ({ type: ADD_MESSAGE })
+export let addMessageActionCreator = (): AddMessageActionType => ({ type: ADD_MESSAGE });
 export let onMessageChangeActionCreator = (text: string): OnMessageChangeActionType => ({ type: UPDATE_NEW_MESSAGE_TEXT, newText: text } as const)
+export let deletePostActionCreator = (): DeletePostActionCreatorType => ({type: DELETE_POSTS});
 export default store;

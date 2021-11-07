@@ -30,7 +30,7 @@ export default function Accordion(props: PropsType) {
     const [collapsed, setCollapsed] = useState(true);
 
     return (
-        <div className={classes.ac}>
+        <div className={classes.ac} style= {(collapsed ? {height: '300px'} : {height: '500px'})}>
             <AccordionTitle title={props.titleValue} />
             <button onClick={() => setCollapsed(!collapsed)}>{collapsed ? 'Show' : 'Collapse'}</button>
             {!collapsed && <AccordionBody />}

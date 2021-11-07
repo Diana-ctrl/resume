@@ -26,6 +26,7 @@ button {
   background: #9370db;
   box-shadow: 0 -3px #9370db inset;
   transition: 0.2s;
+  cursor: pointer;
 }
 button:hover {
   background: #ee82ee;

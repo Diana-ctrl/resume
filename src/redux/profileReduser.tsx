@@ -1,4 +1,4 @@
-import { AllActionsType, ADD_POST, UPDATE_NEW_POST_TEXT } from './store';
+import { AllActionsType, ADD_POST, UPDATE_NEW_POST_TEXT, DELETE_POSTS } from './store';
 
 export type PostsType = {
     id: number
@@ -32,6 +32,9 @@ const profileReduser = (state: InitialProfilePageType = initialState, action: Al
             let stateCopy = {...state}
             stateCopy.newPostText = action.newText;
             return stateCopy;
+        }
+        case DELETE_POSTS: {
+            return {...state, postsData: []};
         }
         default:
             return state;

@@ -3,3 +3,7 @@
     text-shadow: 5px 5px 10px #000000;
     padding: 20px;
 }
+.container > img {
+    width: 1000px;
+}
+

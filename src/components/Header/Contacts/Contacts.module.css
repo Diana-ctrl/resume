@@ -1,0 +1,9 @@
+.a { 
+    text-decoration: none;
+    color: #4B0082;
+    margin: 7px;
+    text-align: right;
+}
+.a:active {
+    color: #FF00FF;
+}

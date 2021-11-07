@@ -1,17 +1,37 @@
 .app-wrapper {
   display: grid;
   margin: 0 auto;
-  width: 2000px;
+  width: 1400px;
 
   grid-template-areas: 
   "h h h"
   "n c c"
   "t t t";
   grid-template-rows: 60px 1fr 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 2fr 9fr;
   grid-gap: 10px;
+
+  font-size: 12pt;
 }
 .app-wrapper-content {
     grid-area: c;
     background-color: #FFE4E1;
+}
+button {
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  padding: 0.8em 1em calc(0.8em + 3px);
+  border-radius: 3px;
+  background: #9370db;
+  box-shadow: 0 -3px #9370db inset;
+  transition: 0.2s;
+}
+button:hover {
+  background: #ee82ee;
+  box-shadow: 0 3px #ee82ee inset;
+}
+button:active {
+  background: #7b68ee;
+  box-shadow: 0 3px #7b68ee inset;
 }

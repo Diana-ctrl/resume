@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/Header'
 import Navbar from './components/Navbar/Navbar';
 import MainContent from './components/MainContent/MainContent';
-import TodoList from './components/TodoList/TodoList';
+import WorkExamples from './components/Work examples/WorkExamples';
 import MoreInformation from './components/MoreInformation/MoreInformation';
 import Music from './components/Music/Music';
 import { Route } from 'react-router-dom';
@@ -21,7 +21,7 @@ function App() {
         <Route exact path={'/message'} render={() => <DialogsContainer />} />
         <Route path={'/music'} render={() => <Music />} />
       </div>
-      <TodoList />
+      <WorkExamples />
     </div>
   );
 }

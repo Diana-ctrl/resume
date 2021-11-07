@@ -1,0 +1,26 @@
+li {
+    list-style-type: none;
+}
+.toDoList {
+    border: 1px solid gray;
+    height: 400px;
+    border-radius: 25px;
+    padding: 12px;
+    overflow: scroll;
+    text-align: center;
+  }
+  
+.active-filter {
+    background-color: chocolate;
+}
+  
+.is-done {
+    opacity: 0.5;
+  }
+  
+.error {
+    border: 2px solid red;
+    outline: none;
+}
+  
+  

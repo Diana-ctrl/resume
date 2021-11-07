@@ -1,6 +1,14 @@
-.todolist {
+.works {
     grid-area: t;
     background-color: #D8BFD8;
     color: #696969;
     text-shadow: 5px 5px 10px #000000;
+    padding: 30px;
+    display: flex;
+}
+  
+.works > div {
+    margin: 5px;
   }
+
+

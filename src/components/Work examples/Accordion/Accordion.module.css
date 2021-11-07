@@ -1,0 +1,9 @@
+.ac {
+    border: 1px solid gray;
+    height: 400px;
+    border-radius: 25px;
+    padding: 12x;
+    display: block;
+    max-width: 200px;
+    text-align: center;
+}

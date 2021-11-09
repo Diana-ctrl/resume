@@ -14,11 +14,11 @@ function AccordionTitle(props: PropsType2) {
 }
 function AccordionBody() {
     return (
-        <ul>
+        <ul style={{textAlign: 'center'}}>
             <h4>Three steps to success</h4>
-            <div>1. Choose for yourself one area in which you want to develop and achieve excellent results.</div>
-            <div>2. You must be surrounded by people who are engaged in this business.</div>
-            <div>3. Daily practice. Daily hard work is the key to success. </div>
+            <li>1. Choose for yourself one area in which you want to develop and achieve excellent results.</li>
+            <li>2. You must be surrounded by people who are engaged in this business.</li>
+            <li>3. Daily practice. Daily hard work is the key to success. </li>
         </ul>
     );
 }

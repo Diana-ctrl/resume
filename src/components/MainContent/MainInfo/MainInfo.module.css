@@ -2,10 +2,12 @@
     color: #696969;
     padding: 20px;
 }
+.container {
+    position: relative;
+}
 .container > img {
     width: 1110px;
     padding: 14px;
-    position: relative;
     text-align: center;
     color: white;
     opacity: 0.5; 
@@ -13,7 +15,7 @@
 .centered {
     position: absolute;
     top: 50%;
-    left: 49%;
+    left: 39%;
     transform: translate(-50%, -50%); 
     color: white;
     font-weight: bold;

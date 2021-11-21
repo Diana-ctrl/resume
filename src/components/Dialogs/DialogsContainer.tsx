@@ -1,6 +1,6 @@
 import Dialogs from './Dialogs';
-import { onMessageChangeActionCreator, addMessageActionCreator } from '../../redux/store'
-import { InitialDialogsPageType } from '../../redux/dialogsReduser';
+import { onMessageChangeActionCreator, addMessageActionCreator } from '../../redux/dialogsReducer';
+import { InitialDialogsPageType } from '../../redux/dialogsReducer';
 import { connect } from 'react-redux';
 import { AppStateType } from '../../redux/reduxStore';
 import { Dispatch } from 'redux';

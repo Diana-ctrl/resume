@@ -1,6 +1,6 @@
 // @ts-nocheck
-import profileReduser from './profileReduser';
-import dialogsReduser from './dialogsReduser';
+import profileReduser from './profileReducer';
+import dialogsReduser from './dialogsReducer';
 export const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 export const ADD_MESSAGE = 'ADD-MESSAGE';
 export const ADD_POST = 'ADD-POST';

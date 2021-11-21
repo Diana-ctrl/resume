@@ -1,8 +1,8 @@
 import MyPosts from './MyPosts';
-import { addPostActionCreator, onPostChangeActionCreator, deletePostActionCreator } from '../../../redux/store';
+import { addPostActionCreator, onPostChangeActionCreator, deletePostActionCreator } from '../../../redux/profileReducer';
 import { connect } from 'react-redux';
 import { AppStateType } from '../../../redux/reduxStore';
-import { InitialProfilePageType } from '../../../redux/profileReduser'
+import { InitialProfilePageType } from '../../../redux/profileReducer'
 import { Dispatch } from 'redux';
 
 type MapToStatePropsType = {

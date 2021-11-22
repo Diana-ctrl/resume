@@ -5,24 +5,24 @@ import { AppStateType } from '../../../redux/reduxStore';
 import { InitialProfilePageType } from '../../../redux/profileReducer'
 import { Dispatch } from 'redux';
 
-type MapToStatePropsType = {
+type MapStateToPropsType = {
     profilePage: InitialProfilePageType
 }
 
-type MapToDispatchPropsType = {
+type MapDispatchToPropsType = {
     postChange: (text: string) => void
     addPost: () => void
     deletePost: () => void
 
 }
-export type MyPostType = MapToDispatchPropsType & MapToStatePropsType;
+export type MyPostType = MapDispatchToPropsType & MapStateToPropsType;
 
-let mapToStateProps = (state: AppStateType): MapToStatePropsType => {
+let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     return {
         profilePage: state.profilePage
     }
 }
-let mapToDispatchProps = (dispatch: Dispatch): MapToDispatchPropsType => {
+let mapDispatchToProps = (dispatch: Dispatch): MapDispatchToPropsType => {
     return {
         postChange: (text: string) => {
             dispatch(onPostChangeActionCreator(text));
@@ -35,7 +35,7 @@ let mapToDispatchProps = (dispatch: Dispatch): MapToDispatchPropsType => {
         },
     }
 }
-const MyPostsContainer = connect(mapToStateProps, mapToDispatchProps)(MyPosts);
+const MyPostsContainer = connect(mapStateToProps, mapDispatchToProps)(MyPosts);
 export default MyPostsContainer;
 
 

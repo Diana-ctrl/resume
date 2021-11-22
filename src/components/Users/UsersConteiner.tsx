@@ -1,17 +1,20 @@
-import Users from './Users';
+import React from 'react';
 import { UsersItemType, followActionCreator, unfollowActionCreator, setUsersActionCreator, setCurrentPageActionCreator, setTotalUsersCountActionCreator } from '../../redux/usersReducer';
 import { connect } from 'react-redux';
 import { AppStateType } from '../../redux/reduxStore';
 import { Dispatch } from 'redux';
+import axios from 'axios';
+import Users from './Users';
 
-type MapToStatePropsType = {
+
+type MapStateToPropsType = {
     usersPage: Array<UsersItemType>
     pageSize: number
     totalUsersCount: number
     currentPage: number
 }
 
-type MapToDispatchPropsType = {
+type MapDispatchToPropsType = {
     followed: (userId: string) => void
     unfollowed: (userId: string) => void
     setUsers: (users: Array<UsersItemType>) => void
@@ -19,9 +22,45 @@ type MapToDispatchPropsType = {
     setTotalUsersCount: (totalCount: number) => void
 }
 
-export type MyFriendsType = MapToDispatchPropsType & MapToStatePropsType;
+export type MyFriendsType = MapDispatchToPropsType & MapStateToPropsType;
 
-let mapToStateProps = (state: AppStateType): MapToStatePropsType => {
+
+type UsersPropsType = {
+    usersPage: Array<UsersItemType>
+    pageSize: number
+    totalUsersCount: number
+    currentPage: number
+    followed: (userId: string) => void
+    unfollowed: (userId: string) => void
+    setUsers: (users: Array<UsersItemType>) => void
+    setCurrentPage: (number: number) => void
+    setTotalUsersCount: (totalCount: number) => void
+}
+class UsersAPIComponent extends React.Component<UsersPropsType> {
+
+    componentDidMount() {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setUsers(response.data.items);
+                this.props.setTotalUsersCount(response.data.totalCount)
+            });
+    }
+    onPageChanged = (number: number) => {
+        this.props.setCurrentPage(number);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${number}&count=${this.props.pageSize}`).then(response => this.props.setUsers(response.data.items));
+    }
+
+    render() {
+        return <Users onPageChanged={this.onPageChanged} totalUsersCount={this.props.totalUsersCount} pageSize={this.props.pageSize}
+            currentPage={this.props.currentPage} usersPage={this.props.usersPage}
+            followed={this.props.followed} unfollowed={this.props.unfollowed} />
+    }
+
+
+}
+
+
+let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     return {
         usersPage: state.usersPage.users,
         pageSize: state.usersPage.pageSize,
@@ -29,7 +68,7 @@ let mapToStateProps = (state: AppStateType): MapToStatePropsType => {
         currentPage: state.usersPage.currentPage,
     }
 }
-let mapToDispatchProps = (dispatch: Dispatch): MapToDispatchPropsType => {
+let mapDispatchToProps = (dispatch: Dispatch): MapDispatchToPropsType => {
     return {
         followed: (userId) => {
             dispatch(followActionCreator(userId));
@@ -48,5 +87,5 @@ let mapToDispatchProps = (dispatch: Dispatch): MapToDispatchPropsType => {
         }
     }
 }
-const UsersContainer = connect(mapToStateProps, mapToDispatchProps)(Users);
+const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersAPIComponent);
 export default UsersContainer;

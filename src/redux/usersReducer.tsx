@@ -46,7 +46,7 @@ export let setTotalUsersCountActionCreator = (totalCount: number) => ({ type: SE
 
 let initialState = {
     users: [],
-    pageSize: 5,
+    pageSize: 7,
     totalUsersCount: 0,
     currentPage: 1,
 };

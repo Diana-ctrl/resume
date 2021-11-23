@@ -1,6 +1,6 @@
 import MyPostsContainer from './MyPosts/MyPostConteiner';
 import MainInfo from './MainInfo/MainInfo';
-import {MainContentType} from './MainInfo/MainInfo';
+import { MainContentType } from './MainInfo/MainInfo';
 
 
 const MainContent = (props: MainContentType) => {

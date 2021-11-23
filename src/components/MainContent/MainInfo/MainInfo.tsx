@@ -39,12 +39,12 @@ const MainInfo = (props: MainContentType) => {
           I am the frontend specialist that you are looking for!
         </div> */}
         <div>
-          <img src={props.profile?.photos?.large} alt='My face' />
+          <img src={props.profile.photos?.large} alt='My face' />
           Information about me:
-          I {props.profile?.fullName} {props.profile?.aboutMe}
+          I {props.profile.fullName} {props.profile.aboutMe}
           Contacts:
-          github: {props.profile?.contacts?.github}
-          instagram: {props.profile?.contacts?.instagram}
+          github: {props.profile.contacts?.github}
+          instagram: {props.profile.contacts?.instagram}
         </div>
 
     </div>

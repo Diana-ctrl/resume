@@ -14,11 +14,11 @@ type UsersType = {
     unfollowed: (userId: string) => void
 }
 const Users = (props: UsersType) => {
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-    let pages = [];
-    for (let i = 1; i <= pagesCount; i++) {
-        pages.push(i);
-    }
+    // let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
+    let pages = Array(10).fill(0).map((_, i) => i + 1);
+    // for (let i = 1; i <= 10; i++) {
+    //     pages.push(i);
+    // }
     return (
         <div className={classes.item}>
             <div>
@@ -28,7 +28,7 @@ const Users = (props: UsersType) => {
                 <div key={user.id}>
                     <div>
                         <NavLink to={'/mainPage/' + user.id}>
-                        <img src={user.photos.small ? user.photos.small : photoMan} alt='Man' />
+                            <img src={user.photos.small ? user.photos.small : photoMan} alt='Man' />
                         </NavLink>
                     </div>
                     {user.name}

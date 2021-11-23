@@ -24,7 +24,7 @@ function App() {
       <Header />
       <Navbar />
       <div className='app-wrapper-content'>
-        <Route path={'/mainPage'} render={() => <MainContentContainer />} />
+        <Route path={'/mainPage/:userID?'} render={() => <MainContentContainer />} />
         <Route path={'/moreInformaition'} render={() => <MoreInformation />} />
         <Route exact path={'/message'} render={() => <DialogsContainer />} />
         <Route path={'/music'} render={() => <Music />} />

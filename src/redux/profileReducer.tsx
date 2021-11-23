@@ -1,7 +1,7 @@
 import { v1 } from 'uuid';
 import { ProfileInfoAboitUserType } from '../components/MainContent/MainInfo/MainInfo';
 
-type AllActionsType = AddPostActionType | OnPostChangeActionType | DeletePostActionCreatorType | SetUserProfileActionCreator ;
+type AllActionsType = AddPostActionType | OnPostChangeActionType | DeletePostActionCreatorType | SetUserProfileActionCreator;
 export type PostsType = {
     id: string
     message: string
@@ -37,7 +37,7 @@ type SetUserProfileActionCreator = ReturnType<typeof setUserProfileActionCreator
 export let addPostActionCreator = () => ({ type: ADD_POST });
 export let onPostChangeActionCreator = (text: string) => ({ type: UPDATE_NEW_POST_TEXT, newText: text } as const)
 export let deletePostActionCreator = () => ({ type: DELETE_POSTS });
-export let setUserProfileActionCreator = (profile: ProfileInfoAboitUserType) => ({ type: SET_USER_PROFILE, profile } );
+export let setUserProfileActionCreator = (profile: ProfileInfoAboitUserType) => ({ type: SET_USER_PROFILE, profile });
 
 
 const profileReduser = (state: InitialProfilePageType = initialState, action: AllActionsType): InitialProfilePageType => {

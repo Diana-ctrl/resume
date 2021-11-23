@@ -102,10 +102,12 @@ let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
 //     }
 // }
 
-const UsersContainer = connect(mapStateToProps, {followed: followActionCreator,
-unfollowed: unfollowActionCreator,
-setUsers: setUsersActionCreator,
-setCurrentPage: setCurrentPageActionCreator,
-setTotalUsersCount: setTotalUsersCountActionCreator,
-setToggleIsFetchig: setToggleIsFetchingActionCreator})(UsersAPIComponent);
+const UsersContainer = connect(mapStateToProps, {
+    followed: followActionCreator,
+    unfollowed: unfollowActionCreator,
+    setUsers: setUsersActionCreator,
+    setCurrentPage: setCurrentPageActionCreator,
+    setTotalUsersCount: setTotalUsersCountActionCreator,
+    setToggleIsFetchig: setToggleIsFetchingActionCreator
+})(UsersAPIComponent);
 export default UsersContainer;

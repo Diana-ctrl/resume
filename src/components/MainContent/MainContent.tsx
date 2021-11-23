@@ -1,10 +1,12 @@
 import MyPostsContainer from './MyPosts/MyPostConteiner';
 import MainInfo from './MainInfo/MainInfo';
+import {MainContentType} from './MainInfo/MainInfo';
 
-const MainContent = () => {
+
+const MainContent = (props: MainContentType) => {
   return (
     <div>
-      <MainInfo />
+      <MainInfo profile={props.profile} />
       <MyPostsContainer />
     </div>
   )

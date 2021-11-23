@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import UsersContainer from './components/Users/UsersConteiner';
-import MainContent from './components/MainContent/MainContent';
+import MainContentContainer from './components/MainContent/MainContentContainer';
 import WorkExamples from './components/Work examples/WorkExamples';
 import MoreInformation from './components/MoreInformation/MoreInformation';
 import Music from './components/Music/Music';
@@ -24,7 +24,7 @@ function App() {
       <Header />
       <Navbar />
       <div className='app-wrapper-content'>
-        <Route path={'/mainPage'} render={() => <MainContent />} />
+        <Route path={'/mainPage'} render={() => <MainContentContainer />} />
         <Route path={'/moreInformaition'} render={() => <MoreInformation />} />
         <Route exact path={'/message'} render={() => <DialogsContainer />} />
         <Route path={'/music'} render={() => <Music />} />

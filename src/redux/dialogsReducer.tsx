@@ -22,11 +22,8 @@ type OnMessageChangeActionType = ReturnType<typeof onMessageChangeActionCreator>
 export const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT' as const;
 export const ADD_MESSAGE = 'ADD-MESSAGE' as const;
 
-
 export let addMessageActionCreator = () => ({ type: ADD_MESSAGE });
 export let onMessageChangeActionCreator = (text: string) => ({ type: UPDATE_NEW_MESSAGE_TEXT, newText: text } as const)
-
-
 
 let initialState = {
     dialogs: [

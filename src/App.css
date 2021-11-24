@@ -10,7 +10,6 @@
   grid-template-rows: 60px 1fr 1fr;
   grid-template-columns: 2fr 9fr;
   grid-gap: 10px;
-
   font-size: 12pt;
 }
 .app-wrapper-content {

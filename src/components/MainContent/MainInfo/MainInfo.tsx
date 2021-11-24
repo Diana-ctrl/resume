@@ -47,8 +47,8 @@ const MainInfo = (props: MainContentType) => {
           instagram: {props.profile.contacts?.instagram}
         </div>
 
-    </div>
-  )
+      </div>
+    )
 }
 
 export default MainInfo;

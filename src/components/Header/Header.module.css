@@ -1,18 +1,19 @@
 .header {
-  grid-area: h;
+  /* grid-area: h; */
   background-color: #D8BFD8;  
 }
 .item {
   color: #696969;
   text-shadow: 5px 5px 10px #000000;
 }
-.gridContainer{
+.gridContainer {
   display: grid;
   grid-template-areas: 
-  "p b c"
-  "p b c";
-  grid-template-columns: 5% 14% 79%;
-}
+  "p b c l"
+  "p b c l";
+  grid-template-columns: 5% 14% 39% 40%;
+} 
+
 .a {
   font-weight: 800;
   text-decoration: none;

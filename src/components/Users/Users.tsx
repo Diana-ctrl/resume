@@ -15,7 +15,7 @@ type UsersType = {
 }
 const Users = (props: UsersType) => {
     // let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-    let pages = Array(10).fill(0).map((_, i) => i + 1);
+    let pages = Array(10).fill(100).map((_, i) => i + 1);
     // for (let i = 1; i <= 10; i++) {
     //     pages.push(i);
     // }
